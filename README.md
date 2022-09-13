@@ -1,0 +1,2 @@
+# Batalha-Naval-APE
+Este projeto foi realizado por mim, Haniel Costa e Allan Amâncio, a fim da obtenção da última nota da disciplina Algoritmo e programação estruturada do curso superior sistemas para internet.  Este programa se trata de uma representação do jogo batalha naval: Um jogador define uma quantidade de navios e o programa gera uma tabela com os navios posicionados de maneira aleatória. Ganha aquele que conseguir acertar a posição do adversário.

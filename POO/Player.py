@@ -16,8 +16,7 @@ class Player:
         self.__navioQuantidade=naviosQuantidade
     @nome.setter
     def nome(self,nome:str):
-        self.nome=nome
-        
+        self.nome=nome       
         
     @property
     def nome(self) -> str:
@@ -32,7 +31,7 @@ class Player:
         return self.__displayedTable
     
     
-    def __montarTableVerdadeira(self, randomize:bool = True, posicoes: list[list[int]] = None):
+    def montarTableVerdadeira(self, randomize:bool = True, posicoes: list[list[int]] = None):
     
         if randomize:
             # Lógica para gerar aleatoriamente as posições dos navios
@@ -55,15 +54,15 @@ class Player:
         self.__displayedTable = Table(10, 10)  # Assumindo um tabuleiro de 10x10
         
         
-    def marcarJogada(self, col:int, row:int)->bool:
+    def marcarTabela(self, col:int, row:int)->bool:
         '''Se tiver acertado a posição de um navio, retorna True, e False caso contrário.
         Também altera a  TableMostrada
         '''
         simbolo = self.__ErroSimbolo
-        Acertounavio= self.__trueTable.obterSimbolo(col, row) == 'N'        
+        Acertounavio= self.__trueTable.obterSimbolo(col, row) == 'N'       
         if Acertounavio:
             simbolo = self.__AcertoSimbolo
-
+            
         self.__displayedTable.inserirSimbolo(col, row,simbolo)
         
         return Acertounavio

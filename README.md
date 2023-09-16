@@ -10,9 +10,8 @@ O jogo consiste em uma competição onde dois jogadores posicionam seus navios e
 - Modelagem de projetos;
 - Construção de interface em linguagem Python;
 - Construir um projeto apresentável. 
-## Requisitos 
 
-### Class
+### Classes
 - The Player
 - The Table
 - The Game
@@ -31,12 +30,14 @@ O jogador possui os seguintes atributos:
 
 | Atributo       | Tipo        | Descrição                                                     |
 | -------------- | ----------- | ------------------------------------------------------------- |
-| `__cols`       | `int`     | Número de colunas na tabela.                                   |
-| `__rows`       | `int`     | Número de linhas na tabela.                                    |
-| `__table`      | `List[List [String] ]` | Uma Matriz que representa a tabela propriamente dita. Ela estára povoada por símbolos|
+| `cols`       | `int`     | Número de colunas na tabela.                                   |
+| `rows`       | `int`     | Número de linhas na tabela.                                    |
+| `table`      | `List[List [String] ]` | Uma Matriz que representa a tabela propriamente dita. Ela estára povoada por símbolos|
+
+## Requisitos 
 
 - O jogo deve ser jogador por apenas dois jogadores;
-- A tabela pode possicionar os navios de forma aleatória ou possicionar de acordo com as posições desejadas por cada jogador    
-- A tabela deve ser povoada por símbolos que possam representar: água, fogo e navio.
+- O jogador pode possicionar os navios na tabela de duas formas: ele próprio escolhendo, ou de forma aleatória
+- A tabela deve ser povoada por símbolos que devem representar: água, fogo e navio.
 - Cada jogador escolhe uma linha e uma coluna da tabela do adversário;
 - Caso o jogador acerte a posição de um navio, ele ganhará uma outra oportunidade de jogar;

@@ -23,7 +23,7 @@ class Table:
         '''Retorna o status atual da tabela'''
         table_str = ''
         for row in self.__table:
-            row_str = ' '.join(f'{cell:^5};' for cell in row)
+            row_str = ' '.join(f'{cell};' for cell in row)
             table_str += f'{row_str}\n'
         return table_str
 
@@ -36,8 +36,12 @@ class Table:
             raise TableException(2, 'Linha inválida: fora dos limites')
 
     def inserirSimbolo(self, coluna: int, linha: int, simbolo: str):
-        ''' Insere um símbolo na tabela.'''
+        ''' 
+        Insere um símbolo na tabela.
+        Só é possível inserir o símbolo na tabela
+        '''
         self.__validarPosicao(coluna, linha)
+        
         self.__table[linha - 1][coluna - 1] = simbolo
 
     def obterSimbolo(self, coluna: int, linha: int)->str:

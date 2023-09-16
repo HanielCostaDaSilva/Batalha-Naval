@@ -1,18 +1,19 @@
-from Tabela import Tabela
+from Table import Table
 from random import randint
-class Jogador:
+
+class Player:
     __nome=''
-    __trueTable= Tabela() #Nesta tabela
-    __tabelaMostrada= Tabela()
+    __trueTable= Table() #Tabela onde está os navios do Jogador.
+    __displayedTable= Table() #Tabela mostrada ao jogador oposto
     
+    #=== Símbolos utilizados ====#
     __navioSimbolo='N'
     __ErroSimbolo='X'
     __AcertoSimbolo='F'
     
     def __init__(self,nome:str,naviosQuantidade:int):
         self.__nome=nome
-        
-        
+        self.__navioQuantidade=naviosQuantidade
     @nome.setter
     def nome(self,nome:str):
         self.nome=nome
@@ -22,13 +23,21 @@ class Jogador:
     def nome(self) -> str:
         return self.__nome
     
+    @property
+    def trueTable(self) -> Table:
+        return self.__trueTable
     
-    def montarTabelaVerdadeira(self, naviosQuantidade:int, randomize:bool = True, posicoes: list[list[int]] = None):
+    @property
+    def displayedTable(self) -> Table:
+        return self.__displayedTable
+    
+    
+    def __montarTableVerdadeira(self, randomize:bool = True, posicoes: list[list[int]] = None):
     
         if randomize:
             # Lógica para gerar aleatoriamente as posições dos navios
-            self.__trueTable = Tabela(10, 10)  # Assumindo um tabuleiro de 10x10
-            for navio in range(naviosQuantidade):
+            self.__trueTable = Table(10, 10)  # Assumindo um tabuleiro de 10x10
+            for navio in range(self.__navioQuantidade):
                 while True:
                     col = randint(1, 10)
                     row = randint(1, 10)
@@ -37,24 +46,24 @@ class Jogador:
                         break
             
         else:
-            self.__trueTable = Tabela(10, 10)  # Assumindo um tabuleiro de 10x10
+            self.__trueTable = Table(10, 10)  # Assumindo um tabuleiro de 10x10
             for posicao in posicoes:
                 col, row = posicao
                 self.__trueTable.inserirSimbolo(col, row, 'N')
                 
-    def montarTabelaMostrada(self):
-        self.__tabelaMostrada = Tabela(10, 10)  # Assumindo um tabuleiro de 10x10
+    def montarTableMostrada(self):
+        self.__displayedTable = Table(10, 10)  # Assumindo um tabuleiro de 10x10
         
         
     def marcarJogada(self, col:int, row:int)->bool:
         '''Se tiver acertado a posição de um navio, retorna True, e False caso contrário.
-        Também altera a  tabelaMostrada
+        Também altera a  TableMostrada
         '''
         simbolo = self.__ErroSimbolo
         Acertounavio= self.__trueTable.obterSimbolo(col, row) == 'N'        
         if Acertounavio:
             simbolo = self.__AcertoSimbolo
 
-        self.__tabelaMostrada.inserirSimbolo(col, row,simbolo)
+        self.__displayedTable.inserirSimbolo(col, row,simbolo)
         
         return Acertounavio

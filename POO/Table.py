@@ -6,14 +6,14 @@ class TableException(Exception):
         '''
         super().__init__(f'{code}: {message}')
 
-class Tabela:
+class Table:
     # Símbolos da tabela
     __aguaSimbolo = '~'
     
     def __init__(self, cols: int, rows: int):
         self.__cols = cols
         self.__rows = rows
-        self.__table = [[self.__aguaSimbolo for _ in range(cols)] for _ in range(rows)]
+        self.__table = [[self.__aguaSimbolo for i in range(cols)] for i in range(rows)]
         
     def __str__(self) -> str:
         return self.mostrar()

@@ -18,6 +18,9 @@ class Table:
     def __str__(self) -> str:
         return self.mostrar()
     
+    @property
+    def table(self) ->list[list[str]]:
+        return self.__table
     
     def mostrar(self) -> str:
         '''Retorna o status atual da tabela'''

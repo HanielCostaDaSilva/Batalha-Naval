@@ -36,8 +36,9 @@ O jogador possui os seguintes atributos:
 
 ## Requisitos 
 
-- O jogo deve ser jogador por apenas dois jogadores;
-- O jogador pode possicionar os navios na tabela de duas formas: ele próprio escolhendo, ou de forma aleatória
-- A tabela deve ser povoada por símbolos que devem representar: água, fogo e navio.
-- Cada jogador escolhe uma linha e uma coluna da tabela do adversário;
-- Caso o jogador acerte a posição de um navio, ele ganhará uma outra oportunidade de jogar;
+[x] O jogo deve ser jogador por apenas dois jogadores;
+[x] O jogador pode possicionar os navios na tabela de duas formas: ele próprio escolhendo, ou de forma aleatória
+[x] A tabela deve ser povoada por símbolos que devem representar: água, fogo e navio.
+[] Cada jogador escolhe uma linha e uma coluna da tabela do adversário;
+[] Caso o jogador acerte a posição de um navio, ele ganhará uma outra oportunidade de jogar;
+[x] O jogador1 sempre iniciará a primeira partida.  

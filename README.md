@@ -47,3 +47,12 @@ O jogador possui os seguintes atributos:
 - [ ] Caso o jogador acerte a posição de um navio, ele ganhará uma outra oportunidade de jogar;
 
 - [X] O jogador1 sempre iniciará a primeira partida.  
+
+## Preview
+
+![Preview da tela principal](assets/preview.png)
+
+## Contribuidores
+
+- [Haniel Costa](https://github.com/HanielCostaDaSilva)
+- [Allan Amâncio](https://github.com/AllanSmithll)
